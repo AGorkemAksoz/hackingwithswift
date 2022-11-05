@@ -296,3 +296,116 @@ while true {
         break
     }
 }
+
+
+//MARK: - Day 5
+
+func printHelp(){
+    let message = """
+Welcome to MyApp!
+
+Run this app inside a directory of images and
+MyApp will resize them all into thumbnails
+"""
+    print(message)
+}
+
+printHelp()
+
+func square(number: Int){
+    print(number*number)
+}
+
+square(number: 12)
+
+
+//func square(numbers: [Int]) {
+//    for number in numbers {
+//        let squared = number * number
+//        print("\(number) squared is \(squared).")
+//    }
+//}
+//square(numbers: [2, 3, 4])
+
+
+
+func square2(number:Int) -> Int{
+    return number*number
+}
+
+let result5 = square2(number: 25)
+print(result5)
+
+func sayHello(to name: String){
+    print("Hello, \(name)")
+}
+sayHello(to: "Taylor Swift")
+
+
+func greet(_ person: String){
+    print("Hello, \(person)!")
+}
+greet("Taylor")
+
+func greet2(_ person:String, nicely: Bool = true){
+    if nicely{
+        print("Hello, \(person)")
+    }else {
+        print("Oh no, \(person) again")
+    }
+}
+
+greet2("Taylor Swift")
+greet2("Boris Johnson", nicely: false)
+
+
+print("Haters", "gonna", "hate")
+
+func square3(numbers: Int...) {
+    for number in numbers{
+        print("\(number) squared is \(number * number)")
+    }
+}
+
+square3(numbers: 2,4,8,12,25)
+
+enum PasswordError: Error{
+    case obvious
+}
+
+func checkPassword(_ password: String) throws -> Bool {
+    if password == "password"{
+        throw PasswordError.obvious
+    }
+    return true
+}
+
+//checkPassword("password")
+
+do {
+    try checkPassword("password")
+    print("That password is good")
+} catch {
+    print("You can't use that password")
+}
+
+func doubleInPlace(number: inout Int){
+    number*=2
+}
+
+var myNum = 10
+
+doubleInPlace(number: &myNum)
+
+//func sumOfFactors(for number: Int) -> Int {
+//    var sum = 0
+//    for i in 1...number {
+//        if number % i == 0 {
+//            sum += i
+//        }
+//    }
+//    return sum
+//}
+//let sum = sumOfFactors(for: 100)
+
+
