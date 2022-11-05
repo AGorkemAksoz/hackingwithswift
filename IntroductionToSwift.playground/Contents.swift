@@ -409,3 +409,42 @@ doubleInPlace(number: &myNum)
 //let sum = sumOfFactors(for: 100)
 
 
+// MARK: - Day 6
+
+let driving = {
+    print("I'm driving my car")
+}
+
+driving()
+
+let driving2 = { (place: String) in
+    print("I'm going to \(place) in my car")
+}
+
+ driving2("London")
+
+let drivingWithReturn = { (place: String) in
+    return "I'm going to \(place) in my car"
+}
+let drivingToLiverpool = drivingWithReturn("Liverpool")
+
+print(drivingToLiverpool)
+
+
+func travel(action: () -> Void){
+    print("I'm getting ready to go")
+    action()
+    print("I've arrived")
+}
+
+travel(action: driving)
+
+func travel2(action: () -> Void){
+    print("I'm getting ready to go")
+    action()
+    print("I've arrived")
+}
+
+travel2(){
+    print("I'm driving my car")
+}
