@@ -445,6 +445,62 @@ func travel2(action: () -> Void){
     print("I've arrived")
 }
 
-travel2(){
+travel2 {
     print("I'm driving my car")
+}
+
+
+// MARK: - Day 7
+
+func travel3(action: (String) -> Void){
+    print("I'm getting ready to go")
+    action("London")
+    print("I arrived!")
+}
+
+travel3 { (place: String) in
+    print("I'm going to \(place) in my car")
+}
+
+func travel4(action: (String) -> String){
+    print("I'm getting ready to go")
+    let description = action("Liverpool")
+    print(description)
+    print("I've arrived")
+}
+
+travel4 { (place: String) -> String in
+    return "I'm going to \(place) in my car"
+}
+
+//func manipulate(numbers: [Int], using algorithm: (Int) -> Int) {
+//    for number in numbers {
+//        let result = algorithm(number)
+//        print("Manipulating \(number) produced \(result)")
+//    }
+//}
+//manipulate(numbers: [1, 2, 3]) { number in
+//    return number * number
+//}
+
+
+func travel5(action: (String) -> String) {
+    print("I'm getting ready to go")
+    let description = action("Nürburgring")
+    print(description)
+    print("Let's race")
+}
+
+travel5 {
+    "I'm going to \($0) with my 350Z"
+}
+
+func travel6(action: (String, Int) -> String){
+    print("I'm getting ready to go")
+    let description = action("Nürburgring", 90)
+    print(description)
+    print("I've arrived")
+}
+travel6 {
+    "I'm going to \($0) at \($1) miles per hour"
 }
