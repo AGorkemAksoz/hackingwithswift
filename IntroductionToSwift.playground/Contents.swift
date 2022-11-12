@@ -595,3 +595,76 @@ var fibonacci = [1, 1, 2, 3, 5, 8]
 fibonacci.sorted() == [1, 2, 3, 5, 8]
 
 
+//MARK: - Day 9
+
+struct User {
+    var userName: String
+    
+    init() {
+      userName = "Anynomous"
+      print("Creating new Use")
+    }
+}
+
+var user = User()
+user.userName = "twostraws"
+
+struct Person2 {
+    var name: String
+    
+    init(name: String) {
+        print("\(name) was born!")
+        self.name = name
+    }
+}
+
+var user2 = Person2(name: "Taylor")
+
+struct FamilyTree {
+    init() {
+        print("Creating family tree")
+    }
+}
+
+struct Person3 {
+    var name: String
+    lazy var familyTree = FamilyTree()
+    
+    init(name:String) {
+        self.name = name
+    }
+}
+
+var eddy = Person3(name: "Eddy")
+eddy.familyTree
+
+struct Student {
+    static var classSize = 0
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+        Student.classSize += 1
+    }
+}
+
+let ed = Student(name: "Ed")
+let taylor2 = Student(name: "Taylor")
+
+print(Student.classSize)
+
+struct Person4 {
+    private var id: String
+    
+    init(id: String) {
+        self.id = id
+    }
+    
+    func identify() -> String {
+        return "My social security number is \(id)"
+    }
+}
+
+let ed2 = Person4(id: "12345")
+
+print(ed2.identify())
