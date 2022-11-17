@@ -758,5 +758,82 @@ let taylor3 = Singer2()
 //taylor3.name = "Ed Sheeran"
 print(taylor3.name)
 
+// MARK: - Day 11
+
+protocol Identifiable {
+    var id: String { get set}
+}
+
+struct User3: Identifiable {
+    var id: String
+}
+
+func displayID(thing: Identifiable) {
+    print("My ID is \(thing.id)")
+}
+
+protocol Payable {
+    func calculateWages() -> Int
+}
+
+protocol NeedsTraining {
+    func study()
+}
+
+protocol HasVacation {
+    func takeVacation( days: Int )
+}
+
+protocol Employee: Payable, NeedsTraining, HasVacation { }
 
 
+extension Int {
+    func squared() -> Int {
+        return self*self
+    }
+}
+
+let number2 = 8
+print(number2.squared())
+
+extension Int {
+    var isEven: Bool{
+        return self % 2 == 0
+    }
+}
+
+print(number2.isEven)
+
+let pythons = ["Eric", "Graham", "John", "Michael", "Terry", "Terry"]
+let beatles2 = Set(["John", "Paul", "George", "Ringo"])
+
+extension Collection {
+    func summarize() {
+        print("There are \(count) of us:")
+
+        for name in self {
+            print(name)
+        }
+    }
+}
+
+pythons.summarize()
+beatles2.summarize()
+
+protocol Identifiable2 {
+    var id: String { get set }
+    func identify()
+}
+
+extension Identifiable2 {
+    func identify() {
+        print("My ID is \(id).")
+    }
+}
+
+struct User2: Identifiable2 {
+    var id: String
+}
+
+let twostraws2 = User2(id: "twostraws")
+twostraws2.identify()
