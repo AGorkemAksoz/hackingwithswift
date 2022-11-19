@@ -837,3 +837,74 @@ struct User2: Identifiable2 {
 
 let twostraws2 = User2(id: "twostraws")
 twostraws2.identify()
+
+// MARK: - Day 12
+
+var age3: Int? = nil
+
+age = 28
+
+var name2: String? = nil
+
+//name2 = "Görkem"
+
+if let unwrapped = name2 {
+    print("\(unwrapped.count)")
+}else {
+    print("Missing name.")
+}
+
+func greet2(_ name: String?) {
+    guard name != nil else {
+        print("You didn't provide a name")
+        return
+    }
+    print("Welcome \(name ?? "Mr. Nobody")")
+}
+
+let str2: String = "5"
+let num = Int(str2)!
+
+let age4: Int! = nil
+
+func username(for id: Int) -> String? {
+    if id == 1 {
+        return "Taylor Swift"
+    } else {
+        return nil
+    }
+}
+
+let user4 = username(for: 15) ?? "Anonymous"
+
+let names = ["Paul", "George", "John", "Ringo"]
+let beatels3 = names.first?.uppercased()
+
+struct Person6 {
+    var id: String
+    
+    init?(id: String) {
+        if id.count == 9 {
+            self.id = id
+        }else {
+            return nil
+        }
+    }
+}
+
+class Animal { }
+class Fish: Animal { }
+
+class Dog3: Animal {
+    func makeNoise() {
+        print("Woof woof!")
+    }
+}
+
+let pets = [Fish(), Dog3(), Fish(), Dog3()]
+
+for pet in pets {
+    if let dog = pet as? Dog3{
+        dog.makeNoise()
+    }
+}
