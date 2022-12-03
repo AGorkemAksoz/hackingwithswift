@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Project 1
 //
-//  Created by Ali Görkem Aksöz on 23.11.2022.
+//  Created by Ali Görkem Aksöz on 22.11.2022.
 //
 
 import UIKit

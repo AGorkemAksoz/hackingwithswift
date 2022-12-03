@@ -119,7 +119,6 @@ var ageDescription = "Ali's age is \(age)"
 // let can't change later
 let taylor = "Swift"
 
-<<<<<<< refs/remotes/origin/main
 
 //MARK: - Day 3
 
@@ -909,7 +908,6 @@ for pet in pets {
         dog.makeNoise()
     }
 }
-=======
 //MARK: - Day 2
 
 let john = "John Lennon"
@@ -992,4 +990,4 @@ enum Planets2: Int {
 }
 
 let venus = Planets2(rawValue : 2)
->>>>>>> Hacking with Swift Day Two Codes
+
