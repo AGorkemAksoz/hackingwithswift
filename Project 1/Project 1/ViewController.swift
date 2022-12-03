@@ -13,6 +13,9 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Strom Viewer"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
@@ -23,12 +26,9 @@ class ViewController: UITableViewController {
                 pictures.append(item)
             }
         }
-        print(pictures)
-        print(pictures.count)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(pictures.count)
-        return 10
+        return pictures.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,7 +37,13 @@ class ViewController: UITableViewController {
         return cell
     }
 
-}
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController{
+               vc.selectedImage = pictures[indexPath.row]
+               navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
 
 
 
