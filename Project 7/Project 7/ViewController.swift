@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UITableViewController {
     
     var petitions = [Petition]()
+    var filteredPetitions = [Petition]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,21 @@ class ViewController: UITableViewController {
         }
         
         showError()
+        
+    }
+    
+    func promptForFilter() {
+        let ac = UIAlertController(title: "Filter", message: nil, preferredStyle: .actionSheet)
+        ac.addTextField()
+        
+        let filterAction = UIAlertAction(title: "Typte to word you want to filter", style: .default) {
+            [weak self, weak ac] action in
+            guard let keyword = ac?.textFields?[0].text else { return }
+            self?.filter(keyword)
+        }
+    }
+    
+    func filter(_ keyword: String) {
         
     }
     
